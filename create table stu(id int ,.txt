@@ -1,0 +1,92 @@
+create table stu(id int ,
+  name varchar(50) ,
+  class varchar(10) ,
+  mark int,
+  gender varchar(20)
+)
+insert into stu    values
+(1, 'John Deo', 'Four', 75, 'female'),
+(2, 'Max Ruin', 'Three', 85, 'male'),
+(3, 'Arnold', 'Three', 55, 'male'),
+(4, 'Krish Star', 'Four', 60, 'female'),
+(5, 'John Mike', 'Four', 60, 'female'),
+(6, 'Alex John', 'Four', 55, 'male'),
+(7, 'My John Rob', 'Five', 78, 'male'),
+(8, 'Asruid', 'Five', 85, 'male'),
+(9, 'Tes Qry', 'Six', 78, 'male'),
+(10, 'Big John', 'Four', 55, 'female'),
+(11, 'Ronald', 'Six', 89, 'female'),
+(12, 'Recky', 'Six', 94, 'female'),
+(13, 'Kty', 'Seven', 88, 'female'),
+(14, 'Bigy', 'Seven', 88, 'female'),
+(15, 'Tade Row', 'Four', 88, 'male'),
+(16, 'Gimmy', 'Four', 88, 'male'),
+(17, 'Tumyu', 'Six', 54, 'male'),
+(18, 'Honny', 'Five', 75, 'male'),
+(19, 'Tinny', 'Nine', 18, 'male'),
+(20, 'Jackly', 'Nine', 65, 'female'),
+(21, 'Babby John', 'Four', 69, 'female'),
+(22, 'Reggid', 'Seven', 55, 'female'),
+(23, 'Herod', 'Eight', 79, 'male'),
+(24, 'Tiddy Now', 'Seven', 78, 'male'),
+(25, 'Giff Tow', 'Seven', 88, 'male'),
+(26, 'Crelea', 'Seven', 79, 'male'),
+(27, 'Big Nose', 'Three', 81, 'female'),
+(28, 'Rojj Base', 'Seven', 86, 'female'),
+(29, 'Tess Played', 'Seven', 55, 'male'),
+(30, 'Reppy Red', 'Six', 79, 'female'),
+(31, 'Marry Toeey', 'Four', 88, 'male'),
+(32, 'Binn Rott', 'Seven', 90, 'female'),
+(33, 'Kenn Rein', 'Six', 96, 'female'),
+(34, 'Gain Toe', 'Seven', 69, 'male'),
+(35, 'Rows Noump', 'Six', 88, 'female');
+select *from stu
+select*from  stu where gender ='male'or gender ='female'
+select*from  stu where gender in ('male','female')
+select*from stu where gender between 'male' and 'female'
+select*from stu where mark =55
+select*from stu where mark >= 55
+select*from stu where mark <= 55
+select*from stu where mark > 55
+select*from stu where mark < 55
+select*from stu where mark in (55,78,45,65)
+select*from stu where mark between 78 and 80
+select*from stu where name like 'a%'
+select*from stu where name like '%a'
+select*from stu where name like '%a%'
+select* from stu order by mark  DESC
+select*from stu  order by name asc 
+select name ,id from stu	order by name desc,id asc 
+select *from stu where name like 'a%' and mark >55
+select *from stu where name like 'a%' and (mark >55  or gender = 'male')
+select*from stu where not mark=55 and not mark=75
+select*from stu where not mark between  55 and 78
+select*from stu where not gender ='male'
+select *from stu wher
+select top 3 mark  from stu order by  mark desc
+select top 3  mark  from stu order by  mark asc
+select top 3  mark  from stu order by  name desc
+select * from stu limit 10
+select count(id) from stu
+select sum(mark) from stu
+select avg(mark) from stu
+select max(mark) from stu
+select min(mark) from stu
+
+select top 2 mark   from stu order by name desc
+select max(mark) from stu where mark <(select max(mark) from stu) where mark <(select max(mark) from stu )
+select min(mark) from stu where mark> (select min(mark) from stu )
+
+SELECT TOP 1  mark
+FROM (
+  SELECT TOP 3  mark FROM stu	ORDER BY mark DESC
+) AS stu ORDER BY mark;
+
+select top 1 mark from (
+select top 3 mark from stu order by mark desc) as stu	order by mark
+select top 1 mark  from (
+select top 3 mark from stu order by mark asc) as stu order by mark desc 
+
+
+
+
